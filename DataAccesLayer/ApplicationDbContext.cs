@@ -15,7 +15,8 @@ namespace DataAccesLayer
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
-        { }
+        {
+        }
 
         public DbSet<Personas> Personas { get; set; }
     }
