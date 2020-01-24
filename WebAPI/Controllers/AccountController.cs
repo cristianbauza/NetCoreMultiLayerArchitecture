@@ -42,6 +42,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost]
+        [Route("login")]
         [ProducesResponseType(typeof(LoginResponseDTO), 200)]
         [ProducesResponseType(500)]
         public async Task<object> Login([FromBody] LoginDTO model)
@@ -61,6 +62,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost]
+        [Route("register")]
         [ProducesResponseType(typeof(RegistroDTO), 200)]
         [ProducesResponseType(500)]
         public async Task<object> Register([FromBody] RegistroDTO model)
@@ -100,7 +102,11 @@ namespace WebAPI.Controllers
                 }
                 else
                 {
-                    return StatusCode(500, "Error no contralado al crear el usuario.");
+                    string errors = "";
+                    result.Errors.ToList().ForEach(x => {
+                        errors += (x.Description + "|");
+                    });
+                    return StatusCode(500, "Error no contralado al crear el usuario: " + errors);
                 }
             }
             catch (Exception ex)

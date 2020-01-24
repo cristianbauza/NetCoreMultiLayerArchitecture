@@ -12,7 +12,7 @@ namespace DataAccesLayer
         public ApplicationDbContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
-            optionsBuilder.UseMySql("Server=192.168.99.102;database=netcorearchitecture;uid=root;pwd=apache*2013;pooling=true;");
+            optionsBuilder.UseMySql("Server=192.168.99.102;database=netcorearchitecture;uid=root;pwd=proyecto*2020;pooling=true;");
 
             return new ApplicationDbContext(optionsBuilder.Options);
         }

@@ -1,0 +1,15 @@
+version: '2.0'
+services:
+  mysql:
+    image: mariadb:10.4.11
+    ports:
+      - 3306:3306
+    command: "--innodb_use_native_aio=0"
+    environment:
+         MYSQL_ROOT_PASSWORD: proyecto*2020
+         MYSQL_DATABASE: proyecto
+         MYSQL_USER: root
+         MYSQL_PASSWORD: proyecto*2020
+    volumes:
+        - ./mysql/data:/var/lib/mysql
+        - ./mysql/dumps:/home

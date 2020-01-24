@@ -53,7 +53,8 @@ namespace DataAccesLayer.Models
                 PrimerApellido = PrimerApellido,
                 PrimerNombre = PrimerNombre,
                 SegundoApellido = SegundoApellido,
-                SegundoNombre = SegundoNombre
+                SegundoNombre = SegundoNombre,
+                TipoDocumento = TipoDocumento
             };
         }
 
